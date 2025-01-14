@@ -1,0 +1,10 @@
+@import url("navbar.css");
+@import url("banner.css");
+@import url("catalog.css");
+@import url("footer.css");
+html{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+body{
+    padding:0 20%;
+}

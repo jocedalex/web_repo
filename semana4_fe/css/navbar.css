@@ -1,0 +1,42 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:lavender;
+    padding:0 1rem;
+
+
+    .logo-container{
+        display: flex;
+        width: 10vw;
+        cursor: pointer;
+    }
+    nav{
+        display: flex;
+        justify-content: left;
+        width: 40vw;
+
+        .menu-button{
+            margin: 1rem;
+            cursor: pointer;
+        }
+
+        .menu-button:hover, .menu-button:active, .menu-button:focus{
+            font-weight: bold;
+    
+        }
+    }
+
+    
+}
+
+#logo{
+    width: 3vw;
+}
+
+.searchbar input{
+    border: none;
+    border-radius: 5px;
+    width: 10vw;
+    height: 3vh;
+}
