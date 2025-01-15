@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="text" placeholder="correo" id="correo">
+        <input type="password" placeholder="password" id="password">
+        <input type="text" placeholder="nombre" id="nombre">
+        <input type="text" placeholder="apellido" id="apellido">
+        <label>Es empleado?</label>
+        <input type="radio" name="empleado" id="empleado_si" value="si" onclick="toggleInput()">Si
+        <input type="radio" name="empleado" id="empleado_no" value="no" onclick="toggleInput()">No
+        <input type="text" placeholder="empleo" id="empleo" hidden disabled>
+    </form>
+</body>
+<script>
+    function toggleInput(){
+        const checkSi=document.getElementById('empleado_si').checked
+        const hiddenInput=document.getElementById('empleo')
+        console.log(checkSi)
+        if (checkSi===true){
+            hiddenInput.hidden=false
+            hiddenInput.disabled=false
+        }
+        else{
+            hiddenInput.hidden=true
+            hiddenInput.disabled=true
+        }
+    }
+</script>
+</html>
