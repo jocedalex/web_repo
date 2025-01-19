@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="mytext">
+    <button id="action">Send</button>
+    <p id="textField"></p>
+    
+</body>
+<script>
+    const myButton = document.getElementById('action')
+
+    const showText = () => {
+        const inputText = document.getElementById('mytext')
+        const showText=document.getElementById('textField')
+
+        showText.innerHTML=inputText.value
+        inputText.value=''
+    }
+
+    myButton.addEventListener('click',showText)
+</script>
+</html>

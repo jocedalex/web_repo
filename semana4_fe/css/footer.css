@@ -1,0 +1,27 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh;
+    margin-top: 2vh;
+    background-color: #FFE5CC;
+    border-radius: 10px;
+
+    p, h3, input{
+        margin: 0.5rem;
+    }
+
+    .footer-button{
+        margin: 1rem;
+        width: 6vw;
+        height: 4vh;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(223, 148, 220);
+
+    }
+    .footer-button:hover{
+        background-color: rgb(243, 191, 241);
+        cursor: pointer;
+    }
+}

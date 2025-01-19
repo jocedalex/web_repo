@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addelement()">Add element</button>
+    <button id="clear">Clear list</button>
+    <ul id="list">
+        <li>first element</li>
+    </ul>
+    
+</body>
+<script>
+    function addelement(){
+        const myList=document.getElementById("list")
+        const newElement=document.createElement('li')
+        newElement.innerHTML="New Element"
+
+        myList.appendChild(newElement)
+    }
+
+    const clearButton=document.getElementById("clear")
+
+    const clearList = () => {
+        const myList=document.getElementById("list")
+        myList.innerHTML=""
+    }
+
+    clearButton.addEventListener('click',clearList)
+
+</script>
+</html>
