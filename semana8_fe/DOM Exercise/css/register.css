@@ -1,0 +1,35 @@
+.register-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 3vw;
+        height: 30vh;
+        width: 30vw;
+        padding: 5vw;
+        box-shadow: 10px 10px 22px 12px rgba(184,177,184,1);
+        border-radius: 5px;  
+
+        input[type="text"], input[type="password"]{
+            width: 20vw;
+            height: 2vh;
+            border-radius: 5px;
+        }
+        
+        input[type="button"]{
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: aquamarine;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            box-shadow: 5px 8px 15px 0px rgba(184,177,184,1);
+        }
+    }
+}

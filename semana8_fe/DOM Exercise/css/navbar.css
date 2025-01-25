@@ -1,0 +1,40 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:aquamarine;
+    padding:0 1rem;
+    border-radius: 10px;
+
+
+    nav{
+        display: flex;
+        justify-content: left;
+        width: 40vw;
+
+        .menu-button{
+            margin: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            font-size: 1rem;
+        }
+
+        .menu-button:hover, .menu-button:active, .menu-button:focus{
+            font-weight: bold;
+    
+        }
+    }
+
+    
+}
+
+.login a{
+    text-decoration: none;
+    border: 0.5px solid gray;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+}
