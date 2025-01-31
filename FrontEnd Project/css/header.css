@@ -1,0 +1,36 @@
+header{
+    font-weight: bold;
+    display: flex;
+    width: 60vw;
+    padding: 0.7rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 35px;
+    img{
+        width: 1.2rem;
+        margin: 0;
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .login-button a{
+        margin-right: 3rem;
+        padding: 0.5rem 1.5rem;
+        background-color: black;
+        border-radius: 8px;
+        color: white;
+               
+    }
+}
+
+nav{
+    display: flex;
+}

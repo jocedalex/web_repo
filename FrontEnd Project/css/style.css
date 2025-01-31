@@ -1,0 +1,12 @@
+@import url("header.css");
+@import url("main.css");
+@import url("tasks.css");
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg,#5de0e6,#004aad);
+    padding: 0 15vw;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
