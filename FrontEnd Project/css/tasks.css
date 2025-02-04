@@ -12,8 +12,9 @@
         color: white;
     }
 
-    button:hover{
+    button:active{
         background-color: rgb(51, 48, 48);
+        transform: scale(0.95);
     }
 }
 
@@ -68,7 +69,10 @@
             border: none;
             border-radius: 15px;
         }
-
+        button:active{
+            background-color: rgb(51, 48, 48);
+            transform: scale(0.95);
+        }
         
     }
 
@@ -92,8 +96,9 @@
             color: white;
         }
 
-        button:hover{
+        button:active{
             background-color: rgb(51, 48, 48);
+            transform: scale(0.95);
         }
     }
 }
