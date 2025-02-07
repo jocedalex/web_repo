@@ -11,7 +11,7 @@ const registerUser = () => {
             data:{
                 password:userData[1].value,
                 taskamount:0,
-                tasks:{}
+                tasks:[]
             }
         }
 
@@ -33,6 +33,5 @@ const registerUser = () => {
 //ff808181932badb60194a4e695607c2a
 //456
 
-//Hilauser
-//ff808181932badb60194ae65c7ac0b88
-//123
+// ff808181932badb60194ddd6c33f5f92
+// 123
