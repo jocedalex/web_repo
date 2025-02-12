@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod necessitatibus quasi nostrum odio reiciendis aut rem rerum qui perferendis nisi, impedit laboriosam, enim ipsum quisquam illo sunt recusandae officiis culpa?</p>
+    <button id="color-button">Color</button>
+</body>
+<script>
+    const colorList=['red','blue','green','yellow','cyan','pink']
+
+    const changeColor = () => {
+        const text=document.getElementById('text')
+        let newColor=colorList[Math.floor(Math.random() * colorList.length)]
+        text.style.backgroundColor=newColor
+        
+    }
+
+    const button = document.getElementById('color-button')
+    button.addEventListener('click',changeColor)
+</script>
+</html>
