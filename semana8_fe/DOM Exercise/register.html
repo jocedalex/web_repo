@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="menu-button" href="change_password.html">Change Password</a>
+        </nav>
+        <div class="login"><a href="login.html">Login</a></div>
+    </header>
+    <section class="register-form">
+        <form enctype="multipart/form-data" name="userForm">
+            <h3>User Registration</h3>
+            <label for="nameInput">Name:</label><input type="text" name="name" id="nameInput" required>
+            <label for="emailInput">Email:</label><input type="text" name="email" id="emailInput" required>
+            <label for="passInput">Password:</label><input type="password" name="pass" id="passInput" required>
+            <label for="addressInput">Address</label><input type="text" name="address" id="addressInput" required>
+            <input type="button" value="Register" onclick="registerUser()">
+        </form>
+    </section>
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/register.js"></script>
+
+</html>
