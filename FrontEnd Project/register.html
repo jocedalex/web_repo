@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="logo"><img src="img/alien-svgrepo-com.svg" alt="logo"><span>To-Do it Easy</span></a></li>
+            </ul>
+        </nav>
+        <div class="login-button" id="login"><a href="login.html">LOGIN</a></div>
+    </header>
+    <section class="main-box">
+        <h1 id="main-text">REGISTER USER</h1>
+        <form name="registerForm" class="gather-form">
+            <div><label for="username">Username: </label><input type="text" name="username" id="username" required></div>
+            <div><label for="pass">Password: </label><input type="password" name="pass" id="pass" required></div>
+            <div><label for="confirm">Confirm Pass:</label><input type="password" name="confirm" id="confirm" required></div>
+            <input type="button" value="Register" onclick="registerUser()">
+        </form>
+
+    </section>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/register.js"></script>
+</html>

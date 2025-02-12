@@ -1,0 +1,104 @@
+.head-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 4fr 1fr;
+    width: 50vw;
+    column-gap: 0.5rem;
+
+    button{
+        border: none;
+        border-radius: 5px;
+        height: 1.5rem;
+        background-color: black;
+        color: white;
+    }
+
+    button:active{
+        background-color: rgb(51, 48, 48);
+        transform: scale(0.95);
+    }
+}
+
+.add-form{
+    display: flex;
+    width: 50vw;
+    justify-content: space-evenly;
+
+    input{
+        width: 23vw;
+        border: 0.5px grey solid;
+        border-radius: 3px;
+        height: 1.5rem;
+    }
+}
+
+.tasks-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 45vw;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: large;
+
+    .task{
+        display: grid;
+        grid-template-columns: 1fr 17fr 1fr 1fr;
+        column-gap: 0.5rem;
+        border-bottom: 0.5px rgb(190, 178, 178) solid;
+
+        .checkbox{
+            accent-color: black;
+        }
+
+        .completed-task{
+            text-decoration: line-through;
+        }
+
+        img{
+            width: 0.9rem;
+        }
+
+        .edit{
+            background-color: rgb(41, 180, 41);
+            border: none;
+            border-radius: 15px;
+        }
+        .delete{
+            background-color: #e21e2c;
+            border: none;
+            border-radius: 15px;
+        }
+        button:active{
+            background-color: rgb(51, 48, 48);
+            transform: scale(0.95);
+        }
+        
+    }
+
+    .task-edit{
+        display: flex;
+        justify-content: space-evenly;
+        column-gap: 0.5rem;
+
+        input{
+            width: 23vw;
+            border: 0.5px grey solid;
+            border-radius: 3px;
+            height: 1.5rem;
+        }
+
+        button{
+            border: none;
+            border-radius: 5px;
+            height: 1.5rem;
+            background-color: black;
+            color: white;
+        }
+
+        button:active{
+            background-color: rgb(51, 48, 48);
+            transform: scale(0.95);
+        }
+    }
+}
