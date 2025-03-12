@@ -1,0 +1,102 @@
+-- database: d:\Soft dev Joced\Python Exercises\web_repo\semana4_be\exercise.db
+-- CREATE TABLE
+--     Authors (ID INT PRIMARY KEY, Name VARCHAR(255) NOT NULL);
+-- CREATE TABLE
+--     Books (
+--         ID INT PRIMARY KEY,
+--         Name VARCHAR(255) NOT NULL,
+--         Author INT,
+--         FOREIGN KEY (Author) REFERENCES Authors (ID)
+--     );
+-- CREATE TABLE
+--     Customers (
+--         ID INT PRIMARY KEY,
+--         Name VARCHAR(255) NOT NULL,
+--         Email VARCHAR(255) UNIQUE NOT NULL
+--     );
+-- CREATE TABLE
+--     Rents (
+--         ID INT PRIMARY KEY,
+--         BookID INT,
+--         CustomerID INT,
+--         State VARCHAR(50) NOT NULL,
+--         FOREIGN KEY (BookID) REFERENCES Books (ID),
+--         FOREIGN KEY (CustomerID) REFERENCES Customers (ID)
+--     );
+-- -- Insertar datos en Authors
+-- INSERT INTO
+--     Authors (ID, Name)
+-- VALUES
+--     (1, 'Miguel de Cervantes'),
+--     (2, 'Dante Alighieri'),
+--     (3, 'Takehiko Inoue'),
+--     (4, 'Akira Toriyama'),
+--     (5, 'Walt Disney');
+-- -- Insertar datos en Books
+-- INSERT INTO
+--     Books (ID, Name, Author)
+-- VALUES
+--     (1, 'Don Quijote', 1),
+--     (2, 'La Divina Comedia', 2),
+--     (3, 'Vagabond 1-3', 3),
+--     (4, 'Dragon Ball 1', 4),
+--     (5, 'The Book of the 5 Rings', NULL);
+-- INSERT INTO
+--     Customers (ID, Name, Email)
+-- VALUES
+--     (1, 'John Doe', 'j.doe@email.com'),
+--     (2, 'Jane Doe', 'jane@doe.com'),
+--     (3, 'Luke Skywalker', 'darth.son@email.com');
+-- INSERT INTO
+--     Rents (ID, BookID, CustomerID, State)
+-- VALUES
+--     (1, 1, 2, 'Returned'),
+--     (2, 2, 2, 'Returned'),
+--     (3, 1, 1, 'On time'),
+--     (4, 3, 1, 'On time'),
+--     (5, 2, 2, 'Overdue');
+-- SELECT
+--     bk.Name AS Book,
+--     at.Name AS Author
+-- FROM
+--     Books bk
+--     LEFT JOIN Authors at ON bk.Author = at.ID;
+-- SELECT
+--     Name
+-- FROM
+--     Books
+-- WHERE
+--     Author IS NULL;
+-- SELECT
+--     at.Name
+-- FROM
+--     Authors at
+--     LEFT JOIN Books ON at.ID = Books.Author
+-- WHERE
+--     Books.ID IS NULL;
+-- SELECT DISTINCT
+--     bk.Name
+-- FROM
+--     Books bk
+--     INNER JOIN Rents ON bk.ID = Rents.BookID;
+-- SELECT
+--     bk.Name
+-- FROM
+--     Books bk
+--     LEFT JOIN Rents rt ON bk.ID = rt.BookID
+-- WHERE
+--     rt.ID IS NULL;
+-- SELECT
+--     ct.Name
+-- FROM
+--     Customers ct
+--     LEFT JOIN Rents rt ON ct.ID = rt.CustomerID
+-- WHERE
+--     rt.ID IS NULL;
+-- SELECT
+--     bk.Name
+-- FROM
+--     Books bk
+--     INNER JOIN Rents rt ON bk.ID = rt.BookID
+-- WHERE
+--     rt.State = 'Overdue';

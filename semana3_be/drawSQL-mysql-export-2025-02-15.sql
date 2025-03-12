@@ -48,6 +48,10 @@
 -- ('131', 'Boing', 48000, '2022-02-15', 'Boing'),
 -- ('132', 'Jumex', 30000, '2022-02-15', 'Jumex');
 
+--update Products set brand = 'Boing' where id = 9;
+
+--delete from Products where id = 10;
+
 -- INSERT INTO Bills (purchase_date, user_email, total, user_phone, cashier_id) VALUES ('2022-02-15', 'test@mail.com', 100000, '123456789', 1),
 -- ('2022-02-12', 'new@tumail.com', 200000, '987654321', 2),
 -- ('2022-02-10', 'this@gmail.com', 300000, '123456789', 3);
@@ -65,9 +69,9 @@
 
 
 -- #4 Exercise---------------------------------
--- SELECT * FROM Products;
+-- SELECT * FROM Products where brand = 'Coca Cola';
 
--- SELECT * FROM Products WHERE price > 50000;
+-- SELECT name,price FROM Products WHERE price > 50000;
 
 -- SELECT bl.purchase_date, bl.user_email, bl.total, bl.user_phone, SUM(bp.total) AS total_calculated FROM Bills bl JOIN `Bill Product` bp ON bl.id = bp.bill_id WHERE bp.product_id = 1;
 
@@ -78,3 +82,5 @@
 -- SELECT * FROM Bills ORDER BY total DESC;
 
 -- SELECT * FROM Bills WHERE id=1;
+
+--Select us.username,rm.name from user us join room rm on us.room_id = rm.id;
