@@ -3,23 +3,27 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/tasks")
+@app.route("/tasks", methods=['GET', 'POST'])
 def tasks():
-    try:
-        with open('tasks.json') as f:
-            data = json.load(f)
+    if request.method == 'GET':
         
-        filter_data = request.args.get('status')
-        if filter_data:
-            data = filter(lambda x: x['status'] == filter_data, data)
+        try:
+            with open('tasks.json') as f:
+                data = json.load(f)
+            
+            filter_data = request.args.get('status')
+            if filter_data:
+                data = filter(lambda x: x['status'] == filter_data, data)
 
-        return data
-    
-    except FileNotFoundError:
-        return 'No tasks created'
+            return data
+        
+        except FileNotFoundError:
+            return 'No tasks created'
+        
+    elif request.method == 'POST':
+        return create_task(request)
 
-@app.route("/create_task", methods=['POST'])
-def create_task():
+def create_task(request):
     try:
         with open('tasks.json') as f:
             data = json.load(f)
@@ -60,43 +64,45 @@ def create_task():
     except ValueError as e:
         return str(e)
 
-@app.route("/update_task/<id>", methods=['PUT'])
+@app.route("/tasks/<id>", methods=['PUT', 'DELETE'])
 def update_task(id):
-    try:
-        with open('tasks.json') as f:
-            data = json.load(f)
-        
-        task = next((task for task in data if task['id'] == int(id)), None)
+    if request.method == 'PUT':
+        try:
+            with open('tasks.json') as f:
+                data = json.load(f)
+            
+            task = next((task for task in data if task['id'] == int(id)), None)
 
-        if task is None:
-            raise ValueError('Task not found')
-        
-        new_task = request.json
-        new_task['status'] = new_task['status'].lower()
+            if task is None:
+                raise ValueError('Task not found')
+            
+            new_task = request.json
+            new_task['status'] = new_task['status'].lower()
 
-        if new_task['status'] not in ['pending', 'in progress', 'done']:
-            raise ValueError('Invalid status')
-        
-        elif new_task["title"] == "":
-            raise ValueError('Title cannot be empty')
-        
-        elif new_task["description"] == "":
-            raise ValueError('Description cannot be empty')
-        
-        task.update(new_task)
+            if new_task['status'] not in ['pending', 'in progress', 'done']:
+                raise ValueError('Invalid status')
+            
+            elif new_task["title"] == "":
+                raise ValueError('Title cannot be empty')
+            
+            elif new_task["description"] == "":
+                raise ValueError('Description cannot be empty')
+            
+            task.update(new_task)
 
-        with open('tasks.json', 'w') as f:
-            json.dump(data, f)
+            with open('tasks.json', 'w') as f:
+                json.dump(data, f)
 
-        return 'Task updated'
-    
-    except FileNotFoundError:
-        return 'No tasks created'
-    
-    except ValueError as e:
-        return str(e)
+            return 'Task updated'
+        
+        except FileNotFoundError:
+            return 'No tasks created'
+        
+        except ValueError as e:
+            return str(e)
+    elif request.method == 'DELETE':
+        return delete_task(id)
 
-@app.route("/delete_task/<id>", methods=['DELETE'])
 def delete_task(id):
     try:
         with open('tasks.json') as f:
